@@ -6,31 +6,31 @@ abstract class PDFEdit
 {
   protected $pdf;
 
-  public function view_edited_in_browser( string $file_name ) : void
+  public function view_in_browser( string $file_name ) : void
   {
-    $this->output_edited( 'I', $file_name );
+    $this->output( 'I', $file_name );
   }
 
-  public function download_edited( string $file_name ) : void
+  public function download( string $file_name ) : void
   {
-    $this->output_edited( 'D', $file_name );
+    $this->output( 'D', $file_name );
   }
 
-  public function save_edited( string $destination_path ) : void
+  public function save( string $destination_path ) : void
   {
-    $this->output_edited( 'F', $destination_path );
+    $this->output( 'F', $destination_path );
   }
 
-  public function get_edited_as_string() : string
+  public function get_as_string() : string
   {
-    return $this->output_edited( 'S' );
+    return $this->output( 'S' );
   }
 
   /**
    * @param $dest Fpdi::output $dest arg. See http://www.fpdf.org/en/doc/output.htm for more details.
    * @param $file_name Fpdi::output $name arg. See http://www.fpdf.org/en/doc/output.htm for more details.
    */
-  private function output_edited( string $dest, string $file_name = null ) : string
+  private function output( string $dest, string $file_name = null ) : string
   {
     if ( $file_name && strpos( $file_name, '.pdf' ) === false )
     {
