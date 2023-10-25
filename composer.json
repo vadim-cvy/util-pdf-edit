@@ -1,0 +1,12 @@
+{
+  "name": "cvy/util-pdf-edit",
+  "autoload": {
+    "psr-4": {
+      "Cvy\\PDFEdit\\": "src/"
+    }
+  },
+  "require": {
+    "setasign/fpdi": "^2.5",
+    "setasign/fpdf": "^1.8"
+  }
+}
